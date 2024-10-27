@@ -11,4 +11,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.6.1" />
   </ItemGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
 </Project>
