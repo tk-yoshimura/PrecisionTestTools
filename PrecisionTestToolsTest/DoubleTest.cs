@@ -78,6 +78,27 @@ namespace PrecisionTestToolsTest {
             catch (AssertFailedException e) {
                 Console.WriteLine(e.Message);
             }
+
+            try {
+                PrecisionAssert.AreEqual(double.NaN, double.NegativeInfinity, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AreEqual(double.NegativeInfinity, double.NaN, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AreEqual(double.PositiveInfinity, double.NegativeInfinity, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
         }
 
         [TestMethod]
@@ -196,6 +217,20 @@ namespace PrecisionTestToolsTest {
             }
 
             try {
+                PrecisionAssert.AlmostEqual(double.NegativeInfinity, double.NaN, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AlmostEqual(double.PositiveInfinity, double.NegativeInfinity, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
                 PrecisionAssert.AlmostEqual(0.1, 0.1 + 1e-10, relerr: 1e-11, abserr: 1e-12);
             }
             catch (AssertFailedException e) {
@@ -211,6 +246,20 @@ namespace PrecisionTestToolsTest {
 
             try {
                 PrecisionAssert.AlmostEqual(double.NaN, double.NegativeInfinity, 1e-9, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AlmostEqual(double.NegativeInfinity, double.NaN, 1e-9, 1e-9);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AlmostEqual(double.PositiveInfinity, double.NegativeInfinity, 1e-9, 1e-9);
             }
             catch (AssertFailedException e) {
                 Console.WriteLine(e.Message);
@@ -268,6 +317,27 @@ namespace PrecisionTestToolsTest {
 
             try {
                 PrecisionAssert.AreEqual(1d, 2d, "message");
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AreEqual(double.NaN, double.NegativeInfinity);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AreEqual(double.NegativeInfinity, double.NaN);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.AreEqual(double.PositiveInfinity, double.NegativeInfinity);
             }
             catch (AssertFailedException e) {
                 Console.WriteLine(e.Message);
