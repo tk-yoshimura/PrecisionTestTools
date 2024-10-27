@@ -68,66 +68,66 @@ namespace PrecisionTestToolsTest {
         }
 
         [TestMethod]
-        public void MlmostEqualTest() {
+        public void AlmostEqualTest() {
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29);
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-40);
-            });
-
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-27);
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-27);
-
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29);
-            });
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-41);
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-40);
             });
 
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-27);
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-28);
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-27);
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-27);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29);
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-39);
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-41);
             });
 
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-27);
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-26);
-
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, "message");
-            });
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-40, "message");
-            });
-
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-27);
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-28);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, "message");
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-41, "message");
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-39);
             });
 
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-28, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-27);
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-26);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, "message");
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, "message");
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-39, "message");
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-40, "message");
             });
 
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-26, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)1, (MultiPrecision<Pow2.N4>)1 + (MultiPrecision<Pow2.N4>)1e-28, 1e-29, 1e-27, "message");
+
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, "message");
+            });
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-41, "message");
+            });
+
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)0.1, (MultiPrecision<Pow2.N4>)0.1 + (MultiPrecision<Pow2.N4>)1e-29, 1e-29, 1e-28, "message");
+
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, "message");
+            });
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-39, "message");
+            });
+
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((MultiPrecision<Pow2.N4>)10, (MultiPrecision<Pow2.N4>)10 + (MultiPrecision<Pow2.N4>)1e-27, 1e-29, 1e-26, "message");
         }
     }
 }

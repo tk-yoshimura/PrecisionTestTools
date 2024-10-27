@@ -7,9 +7,9 @@
 ## Usage
 
 ```csharp
-PrecisionAssert.AreEqual(expected: 1, actual: 1 + 1e-10, delta: 1e-11);
-PrecisionAssert.MlmostEqual(expected: 1, actual: 1 + 1e-10, relerr: 1e-11);
-PrecisionAssert.MlmostEqual(expected: 1, actual: 1 + 1e-10, relerr: 1e-11, abserr: 1e-12);
+PrecisionAssert.AreEqual(expected: 1, actual: 1 + 1e-10, abserr: 1e-11);
+PrecisionAssert.AlmostEqual(expected: 1, actual: 1 + 1e-10, relerr: 1e-11);
+PrecisionAssert.AlmostEqual(expected: 1, actual: 1 + 1e-10, relerr: 1e-11, abserr: 1e-12);
 ```
 
 ## Licence

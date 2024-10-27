@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrecisionTestTools", "PrecisionTestTools\PrecisionTestTools.csproj", "{39E1D109-C743-451D-804F-34AEA1A2222A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrecisionTestToolsTest", "PrecisionTestToolsTest\PrecisionTestToolsTest.csproj", "{8399D956-422E-44BF-92FE-252A32FC2A5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39E1D109-C743-451D-804F-34AEA1A2222A} = {39E1D109-C743-451D-804F-34AEA1A2222A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

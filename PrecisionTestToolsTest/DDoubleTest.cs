@@ -68,66 +68,66 @@ namespace PrecisionTestToolsTest {
         }
 
         [TestMethod]
-        public void MlmostEqualTest() {
+        public void AlmostEqualTest() {
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29);
+                PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-40);
-            });
-
-            PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-27);
-            PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-27);
-
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29);
-            });
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-41);
+                PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-40);
             });
 
-            PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-27);
-            PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-28);
+            PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-27);
+            PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-27);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29);
+                PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-39);
+                PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-41);
             });
 
-            PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-27);
-            PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-26);
-
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, "message");
-            });
-            Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-40, "message");
-            });
-
-            PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-27);
+            PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-28);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, "message");
+                PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29);
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-41, "message");
+                PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-39);
             });
 
-            PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-28, "message");
+            PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-27);
+            PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-26);
 
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, "message");
+                PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, "message");
             });
             Assert.ThrowsException<AssertFailedException>(() => {
-                PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-39, "message");
+                PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-40, "message");
             });
 
-            PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-27, "message");
-            PrecisionAssert.MlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-26, "message");
+            PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((ddouble)1, (ddouble)1 + (ddouble)1e-28, 1e-29, 1e-27, "message");
+
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, "message");
+            });
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-41, "message");
+            });
+
+            PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((ddouble)0.1, (ddouble)0.1 + (ddouble)1e-29, 1e-29, 1e-28, "message");
+
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, "message");
+            });
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-39, "message");
+            });
+
+            PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-27, "message");
+            PrecisionAssert.AlmostEqual((ddouble)10, (ddouble)10 + (ddouble)1e-27, 1e-29, 1e-26, "message");
         }
     }
 }
