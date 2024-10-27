@@ -5,6 +5,11 @@
 .NET 8.0  
 MSTest  
 
+## Install
+
+[Download DLL](https://github.com/tk-yoshimura/PrecisionTestTools/releases)  
+[Download Nuget](https://www.nuget.org/packages/tyoshimura.PrecisionTestTools/)  
+
 ## Usage
 
 ```csharp
