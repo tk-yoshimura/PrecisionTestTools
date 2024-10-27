@@ -157,6 +157,20 @@ namespace PrecisionTestTools {
             }
         }
 
+        public static void IsNotNaN<T>(T value) where T : INumber<T> {
+            IsNotNaN(value, string.Empty);
+        }
+
+        public static void IsNotNaN<T>(T value, string message) where T : INumber<T> {
+            if (!string.IsNullOrEmpty(message)) {
+                message = $"{message}\n";
+            }
+
+            if (T.IsNaN(value)) {
+                throw new AssertFailedException($"{message}expected: not {double.NaN}\n{nameof(value)}:    {value}");
+            }
+        }
+
         public static void IsFinite<T>(T value) where T : INumber<T> {
             IsFinite(value, string.Empty);
         }

@@ -378,6 +378,35 @@ namespace PrecisionTestToolsTest {
         }
 
         [TestMethod]
+        public void IsNotNaNTest() {
+            PrecisionAssert.IsNotNaN(1d);
+            PrecisionAssert.IsNotNaN(double.PositiveInfinity);
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.IsNotNaN(double.NaN);
+            });
+
+            PrecisionAssert.IsNotNaN(1d, "message");
+            PrecisionAssert.IsNotNaN(double.PositiveInfinity, "message");
+            Assert.ThrowsException<AssertFailedException>(() => {
+                PrecisionAssert.IsNotNaN(double.NaN, "message");
+            });
+
+            try {
+                PrecisionAssert.IsNotNaN(double.NaN);
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+
+            try {
+                PrecisionAssert.IsNotNaN(double.NaN, "message");
+            }
+            catch (AssertFailedException e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        [TestMethod]
         public void IsFiniteTest() {
             PrecisionAssert.IsFinite(1d);
             Assert.ThrowsException<AssertFailedException>(() => {
