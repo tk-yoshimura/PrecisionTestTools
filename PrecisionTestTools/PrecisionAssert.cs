@@ -96,7 +96,7 @@ namespace PrecisionTestTools {
             T abserr_actual = T.Abs(expected - actual);
             T delta = T.Abs(expected) * relerr;
             if (abserr_actual > delta) {
-                T relerr_actual = abserr_actual / expected;
+                T relerr_actual = abserr_actual / T.Abs(expected);
 
                 throw new AssertFailedException(
                     $"{message}{nameof(expected)}: {expected}\n{nameof(actual)}:   {actual}\n" +
@@ -133,7 +133,7 @@ namespace PrecisionTestTools {
             T abserr_actual = T.Abs(expected - actual);
             T delta = T.Abs(expected) * relerr + abserr;
             if (abserr_actual > delta) {
-                T relerr_actual = abserr_actual / expected;
+                T relerr_actual = abserr_actual / T.Abs(expected);
 
                 throw new AssertFailedException(
                     $"{message}{nameof(expected)}: {expected}\n{nameof(actual)}:   {actual}\n" +
