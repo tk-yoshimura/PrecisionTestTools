@@ -5,7 +5,7 @@ namespace PrecisionTestToolsTest {
     public class PrecisionCollectionAssertTest {
         [TestMethod]
         public void AreEqualTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.AreEqual([1d, 2d, 3d], [1d, 2d, 3d + 1e-4], 1e-5);
             });
 
@@ -42,7 +42,7 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void EqualTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.AreEqual([1d, 2d, 3d], [1d, 2d, 4d]);
             });
 
@@ -79,7 +79,7 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void AlmostEqualTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.AlmostEqual([1d, 2d, 3d], [1d, 2d, 3d + 1e-4], 1e-5);
             });
 
@@ -91,7 +91,7 @@ namespace PrecisionTestToolsTest {
 
             PrecisionCollectionAssert.AlmostEqual([1d, 2d, 3d], [1d, 2d, 3d + 1e-4], 1e-5, 2e-4);
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.AlmostEqual([1d, 2d, 3d], [1d, 2d, 3d + 1e-4], 1e-5, 1e-6);
             });
 
@@ -154,11 +154,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsNaNTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNaN([1d, 2d, 3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNaN([1d, 2d, double.NaN]);
             });
 
@@ -181,11 +181,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsNotNaNTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNotNaN([double.NaN, double.NaN, double.NaN]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNotNaN([1d, 2d, double.NaN]);
             });
 
@@ -208,11 +208,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsFiniteTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsFinite([double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsFinite([1d, 2d, double.PositiveInfinity]);
             });
 
@@ -235,11 +235,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsInfinityTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsInfinity([1d, 2d, 3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsInfinity([1d, 2d, double.PositiveInfinity]);
             });
 
@@ -263,19 +263,19 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsPositiveInfinityTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositiveInfinity([1d, 2d, 3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositiveInfinity([1d, 2d, double.PositiveInfinity]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositiveInfinity([double.NegativeInfinity, double.NegativeInfinity, double.NegativeInfinity]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositiveInfinity([double.NegativeInfinity, double.NegativeInfinity, double.PositiveInfinity]);
             });
 
@@ -298,19 +298,19 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsNegativeInfinityTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegativeInfinity([1d, 2d, 3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegativeInfinity([1d, 2d, double.NegativeInfinity]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegativeInfinity([double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegativeInfinity([double.NegativeInfinity, double.NegativeInfinity, double.PositiveInfinity]);
             });
 
@@ -333,11 +333,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsPositiveTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositive([-1d, -2d, -3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPositive([1d, 2d, -3d]);
             });
 
@@ -360,11 +360,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsNegativeTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegative([1d, 2d, 3d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsNegative([-1d, -2d, 3d]);
             });
 
@@ -387,11 +387,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsPlusZeroTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPlusZero([-0d, -0d, -0d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsPlusZero([0d, 0d, -0d]);
             });
 
@@ -414,11 +414,11 @@ namespace PrecisionTestToolsTest {
 
         [TestMethod]
         public void IsMinusZeroTest() {
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsMinusZero([0d, 0d, 0d]);
             });
 
-            Assert.ThrowsException<AssertFailedException>(() => {
+            Assert.ThrowsExactly<AssertFailedException>(() => {
                 PrecisionCollectionAssert.IsMinusZero([-0d, -0d, 0d]);
             });
 

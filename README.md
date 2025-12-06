@@ -2,7 +2,7 @@
  Generic Precision Test Tools
 
 ## Requirement
-.NET 8.0  
+.NET 10.0  
 MSTest  
 
 ## Install
